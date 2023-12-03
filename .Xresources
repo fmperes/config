@@ -1,0 +1,114 @@
+! special
+*foreground: #ebdbb2
+*background: #2F343F
+*cursorColor: #afbfbf
+
+! black
+*color0:  #282828
+*color8:  #928374
+
+! red
+*color1:  #cc241d
+*color9:  #fb4934
+
+! green
+*color2:  #98971a
+*color10: #b8bb26
+
+! yellow
+*color3:  #d79921
+*color11: #fabd2f
+
+! blue
+*color4: #458588
+*color12: #83a598
+
+! magenta
+*color5: #b16286
+*color13: #d3869b
+
+! cyan
+*color6: #689d6a
+*color14: #8ec07c
+
+! white
+*color7: #a89984
+*color15: #ebdbb2
+
+!! URxvt Appearance
+URxvt.font: xft:Iosevka:style=Regular:size=10
+URxvt.boldFont: xft:Iosevka:style=Bold:size=10
+URxvt.italicFont: xft:Iosevka:style=Italic:size=10
+URxvt.boldItalicfont: xft:Iosevka:style=Bold Italic:size=10
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
+
+!! Common Keybinds for Navigations
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Left: \033[1;5D
+
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+
+!! Ibus settings
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
+
+! URxvt borders
+URxvt.borderWidth: 0
+URxvt.internalBorder: 18
+URxvt.externalBorder: 0
+
+!Xterm settings
+XTerm*termName: xterm-256color
+XTerm*locale: false
+XTerm*utf8: true
+XTerm*metaSendsEscape: true
+XTerm*faceName: Iosevka:size=10:antialias=true
+XTerm*cursorBlink: true
+XTerm*selectToClipboard: true
+XTerm*ScrollBar: false
+xterm*BorderWidth: 8
+UXTerm.vt100.reverseVideo: true
+
+!Xterm utils from https://lukas.zapletalovi.com/2013/07/hidden-gems-of-xterm.html
+XTerm*fullscreen: never
+XTerm*SaveLines: 9000
+Xterm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+*VT100.Translations: #override \n\
+    Alt <Key>o: exec-formatted("chromium '%t'", PRIMARY) select-start() select-end()
+
+
+! Better asian font handling
+Xft.antialias:  1
+Xft.autohint:   0
+Xft.dpi:        96
+Xft.hinting:    1
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       none
